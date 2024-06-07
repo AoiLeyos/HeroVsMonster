@@ -1,4 +1,4 @@
-class Character {
+export class Character {
     protected damage: number;
     protected name: string;
     protected health: number;
@@ -15,11 +15,15 @@ class Character {
 
 
     isAlive(): boolean {
-        return this.health > 0
+        return this.health > 0;
     }
 
     getHealth(): number {
         return this.health;
+    }
+
+    setHealth(value: number) {
+        this.health = value;
     }
 
     getName(): string {
