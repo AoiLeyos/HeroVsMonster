@@ -1,49 +1,32 @@
-class Personnage {
-    protected damage: number;
-    protected name: string;
-    protected health: number;
-    protected healthMax: number;
-
-    constructor(name: string, health: number, damage: number) {
-        this.name = name;
-        this.health = health;
-        this.healthMax = health;
-        this.damage = damage;
-    }
-
-
-
-    isAlive(): string {
-        if (this.health > 0) {
-            return this.health + "Alive"
-        } return "Died"
-    }
-
-    getHealth(): number {
-        return this.health;
-    }
-
-    getName(): string {
-        return this.name;
-    }
-}
-
-class Hero extends Personnage {
-    private heal: number;
-
-    constructor(name: string, health: number, damage: number, heal: number) {
-        super(name, health, damage);
-        this.heal = heal;
-    }
-}
-
-class Monster extends Personnage {
-    constructor(name: string, health: number, damage: number) {
-        super(name, health, damage);
-    }
-
-}
-
-const hero = new Hero("Jacques le Paladin", 100, 10, 10);
-
+const attackBtn = document.getElementById('attack-btn');
+const healBtn = document.getElementById('heal-btn');
+const resetBtn = document.getElementById('reset-btn');
+const hero = new Hero("Jacques le Paladin", 100);
 const monster = new Monster("Gollum", 100, 10)
+
+attackBtn?.addEventListener('click', () => {
+    hero.Hit(monster);
+    monster.Hit(hero);
+    monster.getHealth();
+    hero.getHealth();
+})
+
+healBtn?.addEventListener('click', () => {
+    hero.Heal();
+    hero.getHealth();
+    setTimeout(() => {
+        monster.Hit(hero);
+        hero.getHealth()
+    }, 1500);
+
+
+})
+
+resetBtn?.addEventListener('click', () => {
+    resetFight();
+})
+
+function resetFight() {
+    hero.setHealth(100);
+    monster.setHealth(100);
+}
