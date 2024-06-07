@@ -1,4 +1,8 @@
-class Hero extends Character {
+import {
+    Character
+} from "./classCharacter"
+
+export class Hero extends Character {
     private heal: number;
 
     constructor(name: string, health: number) {
