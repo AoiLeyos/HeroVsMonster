@@ -1,5 +1,8 @@
-class Monster extends Character {
-    constructor(name: string, health: number, damage: number) {
+import {
+    Character
+} from "./classCharacter"
+export class Monster extends Character {
+    constructor(name: string, health: number) {
         super(name, health);
     }
 
