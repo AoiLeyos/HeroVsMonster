@@ -9,7 +9,7 @@ class Character {
         this.damage = Math.floor(Math.random() * 21);
     }
 
-    public Hit(target: Personnage) {
+    public Hit(target: Character) {
         target.health -= this.damage;
     }
 
