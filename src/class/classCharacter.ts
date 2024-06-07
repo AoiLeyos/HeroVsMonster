@@ -22,10 +22,6 @@ export class Character {
         return this.health;
     }
 
-    setHealth(value: number) {
-        this.health = value;
-    }
-
     getName(): string {
         return this.name;
     }
