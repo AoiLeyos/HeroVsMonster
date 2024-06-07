@@ -1,0 +1,11 @@
+.hero-hp {
+    background-color: green;
+    height: 20px;
+    width: 400px;
+}
+
+.monster-hp {
+    background-color: red;
+    height: 20px;
+    width: 400px;
+}
