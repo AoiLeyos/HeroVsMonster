@@ -3,17 +3,29 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>Hero vs Monster</title>
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <div>
-            <div class="hero-hp">100</div>
-            <div class="monster-hp">100</div>
-            <button id="attack-btn">Fight</button>
+        <div class="Battle">
+            <div class="hero-hp-bar">
+                <h3>Hero</h3>
+                <progress id="hero-hp" max="100" value="100" ">100</progress>
+                <span class=" hero-progressValue">100%</span>
+            </div>
+            <div class=" monster-hp-bar">
+                <h3>Monster</h3>
+                <progress id="monster-hp" max=100 value="100">100</progress>
+                <span class="monster-progressValue">100%</span>
+            </div>
+        </div>
+        <div class="button">
+            <button id="attack-btn">Attack</button>
+            <button id="spe-attack-btn">Special Attack</button>
             <button id="heal-btn">Heal</button>
             <button id="reset-btn">Reset</button>
+            <!-- <script> var exports = {}; </script> -->
+            <script type="module" src="./dist/index.js"></script>
         </div>
-        <script src="./dist/index.js"></script>
     </body>
 </html>
