@@ -1,28 +1,25 @@
 import {
     Character
-} from "./classCharacter";
+} from "./classCharacter.js";
 
-export default class Hero extends Character {
+export class Hero extends Character {
     private heal: number;
+
 
     constructor(name: string, health: number) {
         super(name, health);
         this.heal = Math.floor(Math.random() * 21)
     }
 
-    getHealth(): number {
-        return this.health;
+    public speHit(target: Character, damage: number) {
+        target.currentHealth -= Math.max(damage * 2, 0);
+        return this.currentHealth;
     }
 
-    setHealth(value: number) {
-        this.health = value;
-    }
-
-
-    Heal() {
-
-        if (this.health > 100) {
+    Heal(target: Character, heal: number) {
+        target.currentHealth = Math.min(this.currentHealth + heal, this.health);
+        if (this.health >= 100) {
             return 100
-        }
+        } return this.currentHealth
     }
 }

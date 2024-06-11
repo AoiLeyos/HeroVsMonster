@@ -1,19 +1,13 @@
 import {
     Character
-} from "./classCharacter";
+} from "./classCharacter.js";
 
-export default class Monster extends Character {
+export class Monster extends Character {
+    currentHealth: number
     constructor(name: string, health: number) {
         super(name, health);
-    }
+        this.currentHealth = health
 
-
-    getHealth(): number {
-        return this.health;
-    }
-
-    setHealth(value: number) {
-        this.health = value;
     }
 
 }
