@@ -1,11 +1,43 @@
-.hero-hp {
-    background-color: green;
+progress {
+    background-color: gray;
     height: 20px;
     width: 400px;
 }
 
-.monster-hp {
+#hero-hp::-moz-progress-bar {
+    background-color: green;
+}
+
+#monster-hp::-moz-progress-bar {
     background-color: red;
-    height: 20px;
-    width: 400px;
+}
+
+.progressValue {
+    position: absolute;
+    top: 2px;
+    left: 18%;
+}
+
+.hero-hp-bar {
+    position: relative;
+    margin-left: 10%;
+}
+
+.monster-hp-bar {
+    position: relative;
+    margin-left: 25%;
+    right: 0px;
+}
+
+.button {
+    position: absolute;
+    top: 13%;
+    left: 40%;
+}
+
+.Battle {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    margin: 1%;
 }
