@@ -4,6 +4,26 @@ progress {
     width: 400px;
 }
 
+#monster-hp {
+    position: relative;
+}
+
+.monster-progressValue {
+    position: absolute;
+    left: 180px;
+    top: 62px;
+}
+
+#hero-hp {
+    position: relative;
+}
+
+.hero-progressValue {
+    position: absolute;
+    left: 180px;
+    top: 62px;
+}
+
 #hero-hp::-moz-progress-bar,
 #hero-hp::-webkit-progress-bar {
     background-color: green;
@@ -42,4 +62,15 @@ progress {
     grid-template-columns: 1fr 1fr;
     justify-content: center;
     margin: 1%;
+}
+
+.fight-box {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    box-sizing: border-box;
+    width: 50%;
+    border: 1px solid;
+    margin-top: 75px;
+    margin-left: 20%;
 }
