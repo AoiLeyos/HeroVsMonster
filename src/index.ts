@@ -12,6 +12,7 @@ const resetBtn = document.getElementById('reset-btn');
 const currentHeroHp = document.querySelector(".hero-progressValue") as HTMLTitleElement;
 const currentMonsterHp = document.querySelector(".monster-progressValue") as HTMLTitleElement;
 
+
 function updateProgress() {
     currentHeroHp.textContent = `${hero.getCurrentHealth()}%`;
     currentMonsterHp.textContent = `${monster.getCurrentHealth()}%`;
@@ -109,8 +110,8 @@ function
         return alert("Monster wins")
     };
 
-    console.log(`Hero : ${heroHealth}`);
-    console.log(`Monster : ${monsterHealth}`);
+    console.log(`Hero's health :  ${heroHealth}`);
+    console.log(`Monster's health : ${monsterHealth}`);
 
 }
 
