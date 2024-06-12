@@ -21,7 +21,7 @@ progress {
 }
 
 #monster-hp::-webkit-progress-value {
-    background-color: gray;
+    background-color: green;
 }
 
 .progressValue {
