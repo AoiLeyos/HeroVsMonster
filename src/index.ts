@@ -8,7 +8,7 @@ console.log(hero);
 const attackBtn = document.getElementById('attack-btn') as HTMLButtonElement;
 const healBtn = document.getElementById('heal-btn') as HTMLButtonElement;
 const speAttackBtn = document.getElementById('spe-attack-btn') as HTMLButtonElement;
-const resetBtn = document.getElementById('reset-btn');
+const abortTheMission = document.getElementById('abort-btn') as HTMLButtonElement;
 const currentHeroHp = document.querySelector(".hero-progressValue") as HTMLTitleElement;
 const currentMonsterHp = document.querySelector(".monster-progressValue") as HTMLTitleElement;
 
@@ -35,10 +35,14 @@ attackBtn.addEventListener('click', () => {
     monster.Hit(hero, MonsterAttackDamage);
     const currentHeroHealth = hero.getCurrentHealth();
     if (hero.getCurrentHealth() <= 0) {
-        hero.setCurrentHealth(0)
+        hero.setCurrentHealth(0);
+        resetFight();
+        updateProgress();
     }
     if (monster.getCurrentHealth() <= 0) {
-        monster.setCurrentHealth(0)
+        monster.setCurrentHealth(0);
+        resetFight();
+        updateProgress();
     }
     disabledFightButtons();
     displayHealthStatus(currentHeroHealth, currentMonsterHealth);
@@ -54,10 +58,14 @@ speAttackBtn.addEventListener('click', () => {
     const currentHeroHealth = hero.getCurrentHealth();
 
     if (hero.getCurrentHealth() <= 0) {
-        hero.setCurrentHealth(0)
+        hero.setCurrentHealth(0);
+        resetFight();
+        updateProgress();
     }
     if (monster.getCurrentHealth() <= 0) {
-        monster.setCurrentHealth(0)
+        monster.setCurrentHealth(0);
+        resetFight();
+        updateProgress();
     }
 
     disabledFightButtons();
@@ -88,8 +96,13 @@ healBtn.addEventListener('click', () => {
     const currentHeroHealth = hero.getCurrentHealth();
     const currentMonsterHealth = monster.getCurrentHealth()
 
+    if (hero.getCurrentHealth() >= 100) {
+        hero.setCurrentHealth(100)
+    }
     if (hero.getCurrentHealth() <= 0) {
-        hero.setCurrentHealth(0)
+        hero.setCurrentHealth(0);
+        resetFight();
+        updateProgress();
     }
 
     disabledFightButtons();
@@ -103,11 +116,11 @@ function
     const monsterHealth = Math.max(MonsterHealth, 0)
 
     if (HeroHealth <= 0 && MonsterHealth <= 0) {
-        return alert("Equality")
+        alert("Equality")
     } else if (MonsterHealth <= 0) {
-        return alert("Hero wins")
+        alert("Hero wins");
     } else if (HeroHealth <= 0) {
-        return alert("Monster wins")
+        alert("Monster wins")
     };
 
     console.log(`Hero's health :  ${heroHealth}`);
@@ -115,7 +128,8 @@ function
 
 }
 
-resetBtn?.addEventListener('click', () => {
+abortTheMission.addEventListener('click', () => {
+    alert("You're weak")
     resetFight();
     updateProgress();
 })
