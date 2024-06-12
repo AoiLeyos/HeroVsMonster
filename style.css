@@ -10,7 +10,7 @@ progress {
 }
 
 #monster-hp::-moz-progress-bar,
-#monster-hp::-webkit-progress-bar {
+#monster-hp::-webkit-progress-value {
     background-color: red;
 }
 
