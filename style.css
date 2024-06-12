@@ -4,14 +4,24 @@ progress {
     width: 400px;
 }
 
-#hero-hp::-moz-progress-bar,
+#hero-hp {
+    color: green;
+}
+
+#hero-hp::-moz-progress-bar {
+    background-color: green;
+}
+
 #hero-hp::-webkit-progress-bar {
     background-color: green;
 }
 
-#monster-hp::-moz-progress-bar,
-#monster-hp::-webkit-progress-value {
+#monster-hp::-moz-progress-bar {
     background-color: red;
+}
+
+#monster-hp::-webkit-progress-value {
+    background-color: gray;
 }
 
 .progressValue {
