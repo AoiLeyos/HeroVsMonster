@@ -6,27 +6,25 @@ progress {
 
 #hero-hp {
     color: grey;
+
+    background-color: green;
 }
 
 #monster-hp {
     color: grey;
+    background-color: red;
 }
 
 #hero-hp::-moz-progress-bar {
     background-color: green;
 }
 
-#hero-hp::-webkit-progress-bar {
-    background-color: green;
-}
+#hero-hp::-webkit-progress-bar {}
 
 #monster-hp::-moz-progress-bar {
     background-color: red;
 }
 
-#monster-hp::-webkit-progress-value {
-    background-color: red;
-}
 
 .progressValue {
     position: absolute;
